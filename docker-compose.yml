@@ -1,0 +1,16 @@
+version: "3.7"
+# version de la sintaxis de docker
+
+services:
+  asesorias-backend-module-proyecto:
+    container_name: asesorias-backend-module-proyecto
+    image: asesorias-backend-module-proyecto:v1
+    build:
+      context: .
+    ports:
+      - 4001:4001
+    networks:
+      - asesorias-app
+networks:
+  asesorias-app:
+    driver: bridge
