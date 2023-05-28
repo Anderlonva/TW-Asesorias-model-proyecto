@@ -3,14 +3,43 @@ version: "3.7"
 
 services:
   asesorias-backend-module-proyecto:
-    container_name: asesorias-backend-module-proyecto
-    image: asesorias-backend-module-proyecto:v1
+    container_name: asesorias-module-proyecto-1
+    image: anderlonva/asesorias-module-proyecto:1.0.1
     build:
       context: .
     ports:
-      - 4001:4001
+      - "4001"
     networks:
       - asesorias-app
+  
+  asesorias-backend-module-proyecto-2:
+    container_name: asesorias-module-proyecto-2
+    image: anderlonva/asesorias-module-proyecto:1.0.1
+    ports:
+      - "4001"
+    networks:
+      - asesorias-app
+
+  asesorias-backend-module-proyecto-3:
+    container_name: asesorias-module-proyecto-3
+    image: anderlonva/asesorias-module-proyecto:1.0.1
+    ports:
+      - "4001"
+    networks:
+      - asesorias-app
+
+  balanceador-carga:
+    container_name: balanceador-carga
+    image: balanceador-carga:1.0.0
+    build:
+      context: ./balanceador
+    ports:
+      - "4003:80"
+    networks:
+      - asesorias-app
+
 networks:
   asesorias-app:
     driver: bridge
+
+

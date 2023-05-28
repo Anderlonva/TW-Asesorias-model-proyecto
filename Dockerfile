@@ -1,4 +1,4 @@
-FROM node:18 
+FROM node:16 
 # decimos que version de node se va a utilizar en el contenedor
 
 WORKDIR /usr/src/app
