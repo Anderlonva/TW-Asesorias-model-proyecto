@@ -4,7 +4,7 @@ version: "3.7"
 services:
   asesorias-backend-module-proyecto:
     container_name: asesorias-module-proyecto-1
-    image: anderlonva/asesorias-module-proyecto:1.0.1
+    image: anderlonva/asesorias-module-proyecto:latest
     build:
       context: .
     ports:
@@ -19,7 +19,7 @@ services:
 
   balanceador-carga:
     container_name: balanceador-carga
-    image: balanceador-carga:1.0.0
+    image: balanceador-carga:latest
     build:
       context: ./balanceador
     ports:
